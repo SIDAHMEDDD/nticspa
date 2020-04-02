@@ -1,0 +1,65 @@
+@import '../layout/main_mixins';
+@import '../layout/env';
+
+
+.card {
+	text-align: left;
+	border: none;
+	margin: 20px 0;
+	padding: 0;
+	img.avatar {
+		width: 5%;
+		margin: 10px 0px 20px 10px;
+	}
+	h5.username {
+		display: inline;
+		padding: 10px;
+	}
+	form {
+		input.form-control {
+			border: none;
+			background: $input-secondary-background;
+		}
+		button {
+			background: $btn-light-color;
+			border: none;
+			padding-top: 15px;
+			padding-bottom: 15px;
+			width: 100%;
+			margin: 0;
+			&:hover {
+				background: $btn-light-hover;
+			}
+		}
+		textarea {
+			border: none;
+			background: $input-secondary-background;
+		}
+		textarea:focus {
+			border: none;
+			background: $input-secondary-background;
+		}
+		div.form-check {
+			margin: 20px 5px;
+		}
+	}
+	ul {
+		text-align: center;
+		li a {
+			padding: 10px 30px;
+			color: $font-main-color;
+			&:hover {
+				color: $font-secondary-color;
+			}
+		}
+	}
+	a.user-buttons {
+		padding: 10px 20px;
+		border: none;
+		margin: 5px;
+		background: $btn-light-color;
+		&:hover {
+			background: $btn-light-hover;
+		}
+	}
+}

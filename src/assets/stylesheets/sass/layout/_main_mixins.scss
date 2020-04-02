@@ -1,0 +1,29 @@
+///////  Main mixins
+
+@mixin hide_x () {
+	overflow-x: hidden;
+}
+
+@mixin beautify_input() {
+	border: none;
+	padding: 5px;
+}
+
+@mixin remove_blue_glow() {
+	textarea:hover, 
+	input:hover, 
+	textarea:active, 
+	input:active, 
+	textarea:focus, 
+	input:focus,
+	button:focus,
+	button:active,
+	button:hover,
+	label:focus,
+	.btn:active,
+	.btn.active
+	{
+	    outline: none;
+		box-shadow:none !important;
+	}
+}

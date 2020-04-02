@@ -1,0 +1,652 @@
+@charset "UTF-8";
+/* RESET RULES
+ÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇô */
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700&display=swap");
+/* line 5, ../sass/dashboard.scss */
+:root {
+  --page-header-bgColor: #0f233c;
+  --page-header-bgColor-hover: #1d2636;
+  --page-header-txtColor: #dde9f8;
+  --page-header-headingColor: #7889a4;
+  --page-header-width: 220px;
+  --page-content-bgColor: #f0f1f6;
+  --page-content-txtColor: #171616;
+  --page-content-blockColor: #fff;
+  --white: #fff;
+  --black: #333;
+  --blue: #ea1b25;
+  --red: #ec1848;
+  --border-radius: 4px;
+  --box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.075);
+}
+
+/* line 22, ../sass/dashboard.scss */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* line 28, ../sass/dashboard.scss */
+ul {
+  list-style: none;
+}
+
+/* line 32, ../sass/dashboard.scss */
+a,
+button {
+  color: inherit;
+}
+
+/* line 37, ../sass/dashboard.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 41, ../sass/dashboard.scss */
+button {
+  background: none;
+  cursor: pointer;
+}
+
+/* line 46, ../sass/dashboard.scss */
+input {
+  -webkit-appearance: none;
+}
+
+/* line 50, ../sass/dashboard.scss */
+button,
+input {
+  border: none;
+}
+
+/* line 55, ../sass/dashboard.scss */
+svg {
+  display: block;
+}
+
+/* line 59, ../sass/dashboard.scss */
+body {
+  font: 16px/1.5 "Lato", sans-serif;
+}
+
+/* HEADER STYLES
+ÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇô */
+/* line 66, ../sass/dashboard.scss */
+.page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding-top: 20px;
+  width: var(--page-header-width);
+  color: var(--page-header-txtColor);
+  background: var(--page-header-bgColor);
+}
+
+/*In case you prefer an absolutely positioned header that covers the full page height, add these styles*/
+/*body {
+  position: relative;
+}
+
+.page-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}*/
+/*remove these styles*/
+/*.page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+}*/
+/* line 101, ../sass/dashboard.scss */
+.page-header nav {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+/* line 107, ../sass/dashboard.scss */
+.page-header .logo {
+  display: block;
+  max-width: 120px;
+  margin: 0 15px;
+}
+
+/* line 113, ../sass/dashboard.scss */
+.page-header .toggle-mob-menu {
+  display: none;
+  margin-left: 5px;
+  padding: 4px;
+  background: var(--page-content-blockColor);
+  border-radius: var(--border-radius);
+}
+
+/* line 121, ../sass/dashboard.scss */
+.page-header .toggle-mob-menu svg {
+  fill: var(--black);
+  transition: transform 0.2s;
+}
+
+/* line 126, ../sass/dashboard.scss */
+.page-header .admin-menu {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-top: 35px;
+}
+
+/* line 133, ../sass/dashboard.scss */
+.page-header .admin-menu li:nth-last-child(2) {
+  margin-bottom: 35px;
+}
+
+/* line 137, ../sass/dashboard.scss */
+.page-header .admin-menu li:last-child {
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+/* line 142, ../sass/dashboard.scss */
+.page-header .admin-menu li > * {
+  width: 100%;
+  padding: 12px 15px;
+}
+
+/* line 147, ../sass/dashboard.scss */
+.page-header .admin-menu .menu-heading h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 12px;
+  margin-top: 12px;
+  color: var(--page-header-headingColor);
+}
+
+/* line 155, ../sass/dashboard.scss */
+.page-header .admin-menu svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--page-header-txtColor);
+  margin-right: 10px;
+  transition: fill 0.2s;
+}
+
+/* line 163, ../sass/dashboard.scss */
+.page-header .admin-menu i {
+  width: 20px;
+  height: 20px;
+  fill: var(--page-header-txtColor);
+  margin-right: 10px;
+  transition: fill 0.2s;
+}
+
+/* line 171, ../sass/dashboard.scss */
+.page-header .admin-menu a,
+.page-header .admin-menu button {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* line 179, ../sass/dashboard.scss */
+.page-header .admin-menu a:hover,
+.page-header .admin-menu a:focus,
+.page-header .admin-menu button:hover,
+.page-header .admin-menu button:focus {
+  background: var(--page-header-bgColor-hover);
+  color: var(--blue);
+  outline: none;
+}
+
+/* line 188, ../sass/dashboard.scss */
+.page-header .admin-menu a:hover svg,
+.page-header .admin-menu a:focus svg,
+.page-header .admin-menu button:hover svg,
+.page-header .admin-menu button:focus svg {
+  fill: var(--blue);
+}
+
+/* PAGE CONTENT STYLES
+ÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇô */
+/* line 198, ../sass/dashboard.scss */
+.page-content {
+  position: relative;
+  left: var(--page-header-width);
+  width: calc(100% - var(--page-header-width));
+  min-height: 100vh;
+  color: var(--page-content-txtColor);
+  background: var(--page-content-bgColor);
+}
+
+/* line 207, ../sass/dashboard.scss */
+.search-and-user {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-column-gap: 50px;
+  align-items: center;
+  background: #0f233c;
+  color: white;
+  padding: 1em;
+  margin-bottom: 30px;
+}
+
+/* line 218, ../sass/dashboard.scss */
+.search-and-user form {
+  position: relative;
+}
+
+/* line 222, ../sass/dashboard.scss */
+.search-and-user input[type="search"] {
+  width: 100%;
+  height: 50px;
+  font-size: 1.5rem;
+  padding-left: 15px;
+  background: var(--page-content-blockColor);
+  color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+/* line 233, ../sass/dashboard.scss */
+.search-and-user ::placeholder {
+  color: var(--page-content-txtColor);
+}
+
+/* line 237, ../sass/dashboard.scss */
+.search-and-user form svg {
+  width: 26px;
+  height: 26px;
+  fill: var(--page-content-txtColor);
+}
+
+/* line 243, ../sass/dashboard.scss */
+.search-and-user form button {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+}
+
+/* line 250, ../sass/dashboard.scss */
+.search-and-user .admin-profile {
+  display: flex;
+  align-items: center;
+}
+
+/* line 255, ../sass/dashboard.scss */
+.search-and-user .admin-profile .greeting {
+  margin: 0 10px 0 20px;
+}
+
+/* line 259, ../sass/dashboard.scss */
+.search-and-user .admin-profile svg {
+  width: 30px;
+  height: 30px;
+}
+
+/* line 264, ../sass/dashboard.scss */
+.search-and-user .admin-profile .notifications {
+  position: relative;
+}
+
+/* line 268, ../sass/dashboard.scss */
+.search-and-user .admin-profile .badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -10px;
+  right: -3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-size: 10px;
+  color: var(--white);
+  background: var(--red);
+}
+
+/* line 283, ../sass/dashboard.scss */
+.page-content .grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+}
+
+/* line 289, ../sass/dashboard.scss */
+.page-content .grid > article {
+  display: flex;
+  padding: 1em;
+  margin: 2em;
+  background: var(--page-content-blockColor);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+/* line 298, ../sass/dashboard.scss */
+.page-content .grid > article:first-child,
+.page-content .grid > article:last-child {
+  grid-column: 1 / -1;
+}
+
+/* MQ RULES
+ÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇô */
+@media screen and (max-width: 767px) {
+  /* line 305, ../sass/dashboard.scss */
+  .page-header,
+  .page-content {
+    position: static;
+    width: 100%;
+  }
+
+  /* line 311, ../sass/dashboard.scss */
+  .page-header {
+    padding: 10px;
+  }
+
+  /* line 315, ../sass/dashboard.scss */
+  .page-header nav {
+    flex-direction: row;
+  }
+
+  /* line 319, ../sass/dashboard.scss */
+  .page-header .logo {
+    margin: 0;
+    height: 35px;
+  }
+
+  /* line 324, ../sass/dashboard.scss */
+  .page-header .toggle-mob-menu {
+    display: block;
+  }
+
+  /* line 328, ../sass/dashboard.scss */
+  .page-header .admin-menu {
+    position: absolute;
+    left: 98px;
+    top: 57px;
+    margin-top: 0;
+    z-index: 2;
+    border-radius: var(--border-radius);
+    background: var(--page-header-bgColor);
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.2s;
+  }
+
+  /* line 342, ../sass/dashboard.scss */
+  .page-header .admin-menu li:nth-last-child(2) {
+    margin-bottom: 12px;
+  }
+
+  /* line 346, ../sass/dashboard.scss */
+  .page-header .admin-menu li:last-child,
+  .search-and-user .admin-profile .greeting {
+    display: none;
+  }
+
+  /* line 351, ../sass/dashboard.scss */
+  .page-content {
+    min-height: 0;
+    padding: 10px;
+  }
+
+  /* line 356, ../sass/dashboard.scss */
+  .page-content .grid {
+    grid-gap: 10px;
+  }
+
+  /* line 360, ../sass/dashboard.scss */
+  .search-and-user {
+    position: absolute;
+    left: 131px;
+    top: 10px;
+    padding: 0;
+    grid-column-gap: 5px;
+    width: calc(100% - 141px);
+    border-radius: var(--border-radius);
+    background: transparent;
+  }
+
+  /* line 371, ../sass/dashboard.scss */
+  .search-and-user input[type="search"] {
+    font-size: 1rem;
+    height: 35px;
+  }
+
+  /* line 376, ../sass/dashboard.scss */
+  .search-and-user form svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* line 381, ../sass/dashboard.scss */
+  .search-and-user .admin-profile svg {
+    fill: var(--white);
+  }
+}
+@media screen and (max-width: 400px) {
+  /* line 387, ../sass/dashboard.scss */
+  .page-content .grid > article {
+    grid-column: 1 / -1;
+  }
+}
+/* BODY CLASSES
+ÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇô */
+/* line 395, ../sass/dashboard.scss */
+.mob-menu-opened .toggle-mob-menu svg {
+  transform: rotate(180deg);
+}
+
+/* line 399, ../sass/dashboard.scss */
+.mob-menu-opened .page-header .admin-menu {
+  transform: scale(1);
+  visibility: visible;
+  opacity: 1;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 406, ../sass/dashboard.scss */
+  .collapsed .page-header {
+    width: 40px;
+  }
+
+  /* line 410, ../sass/dashboard.scss */
+  .collapsed .page-header .admin-menu li > * {
+    padding: 10px;
+  }
+
+  /* line 414, ../sass/dashboard.scss */
+  .collapsed .page-header .logo,
+  .collapsed .page-header .admin-menu span,
+  .collapsed .page-header .admin-menu .menu-heading {
+    display: none;
+  }
+
+  /* line 420, ../sass/dashboard.scss */
+  .collapsed .page-header .admin-menu svg {
+    margin-right: 0;
+  }
+
+  /* line 424, ../sass/dashboard.scss */
+  .collapsed .page-header .collapse-btn svg {
+    transform: rotate(180deg);
+  }
+
+  /* line 428, ../sass/dashboard.scss */
+  .collapsed .page-content {
+    left: 40px;
+    width: calc(100% - 40px);
+  }
+}
+/* FOOTER
+ÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇôÔÇô */
+/* line 437, ../sass/dashboard.scss */
+.page-footer {
+  font-size: 0.85rem;
+  text-align: right;
+  margin-top: 10px;
+}
+
+/* line 443, ../sass/dashboard.scss */
+.page-footer span {
+  color: var(--red);
+}
+
+/* line 448, ../sass/dashboard.scss */
+p.ow {
+  word-break: break-word !important;
+}
+
+/* line 453, ../sass/dashboard.scss */
+.messages h3 {
+  padding: 1em !important;
+}
+/* line 456, ../sass/dashboard.scss */
+.messages .active {
+  background: #f1f2f6 !important;
+}
+/* line 459, ../sass/dashboard.scss */
+.messages .message {
+  border-top: 1px solid #a4b0be;
+  padding: 2em !important;
+}
+/* line 462, ../sass/dashboard.scss */
+.messages .message p {
+  padding: 1em 0;
+}
+/* line 465, ../sass/dashboard.scss */
+.messages .message a {
+  padding: .5em;
+  margin: .5em;
+  border-radius: 50px;
+}
+/* line 470, ../sass/dashboard.scss */
+.messages .message .ch {
+  color: white;
+  background: #EA2027;
+}
+/* line 474, ../sass/dashboard.scss */
+.messages .message .dl {
+  color: white;
+  background: #009432;
+}
+
+/* line 483, ../sass/dashboard.scss */
+.commandes h3 {
+  padding: 1em !important;
+}
+/* line 486, ../sass/dashboard.scss */
+.commandes .command {
+  border-top: 1px solid #a4b0be;
+  padding: 2em !important;
+  width: auto !important;
+}
+/* line 490, ../sass/dashboard.scss */
+.commandes .command p {
+  padding: 1em 0;
+}
+/* line 493, ../sass/dashboard.scss */
+.commandes .command .contro {
+  padding: 2em 0;
+}
+/* line 496, ../sass/dashboard.scss */
+.commandes .command a {
+  padding: .5em 0;
+  margin: 1em 0;
+  border-radius: 50px;
+  color: #353b48;
+}
+/* line 502, ../sass/dashboard.scss */
+.commandes .command .suc {
+  padding: .5em;
+  margin: .5em;
+  color: white;
+  background: #009432;
+}
+/* line 508, ../sass/dashboard.scss */
+.commandes .command .dan {
+  padding: .5em;
+  margin: .5em;
+  color: white;
+  background: #EA2027;
+}
+/* line 514, ../sass/dashboard.scss */
+.commandes .command .prim {
+  padding: .5em;
+  margin: .5em;
+  color: white;
+  background: #40739e;
+}
+
+/* line 526, ../sass/dashboard.scss */
+.products-dashboard table th {
+  padding: .5em;
+  background: #dcdde1;
+}
+/* line 530, ../sass/dashboard.scss */
+.products-dashboard table td {
+  padding: .5em;
+}
+/* line 533, ../sass/dashboard.scss */
+.products-dashboard table tr:nth-child(even) {
+  background: #f8f8fa;
+}
+/* line 537, ../sass/dashboard.scss */
+.products-dashboard .frm {
+  padding: 1.5em;
+}
+/* line 539, ../sass/dashboard.scss */
+.products-dashboard .frm a {
+  padding: .5em 1em;
+  color: white;
+}
+/* line 543, ../sass/dashboard.scss */
+.products-dashboard .frm .suc {
+  padding: .5em;
+  margin: .5em;
+  color: white;
+  background: #009432;
+}
+/* line 549, ../sass/dashboard.scss */
+.products-dashboard .frm .dan {
+  padding: .5em;
+  margin: .5em;
+  color: white;
+  background: #EA2027;
+}
+/* line 555, ../sass/dashboard.scss */
+.products-dashboard .frm .prim {
+  padding: .5em;
+  margin: .5em;
+  color: white;
+  background: #40739e;
+}
+/* line 562, ../sass/dashboard.scss */
+.products-dashboard .frm a, .products-dashboard form {
+  display: inline;
+}
+/* line 565, ../sass/dashboard.scss */
+.products-dashboard form {
+  padding: 1em;
+}
+/* line 567, ../sass/dashboard.scss */
+.products-dashboard form input {
+  width: 30%;
+  background: #dcdde1;
+  padding: .5em;
+}
+/* line 572, ../sass/dashboard.scss */
+.products-dashboard form button {
+  color: white;
+  background: #ea1b25;
+  padding: .5em;
+}
